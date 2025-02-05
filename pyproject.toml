@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "efa_cli"
+version = "0.0.1"
+description = "Events Flow Analyser Configurator Client"
+authors = [{name = "Dmitry Vukolov", email = "vukolov.dmitry@gmail.com"}]
+dependencies = []
+requires-python = ">=3.11"
+
+[project.scripts]
+efa-cli = "application.main:app"
