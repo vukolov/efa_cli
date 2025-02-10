@@ -26,6 +26,6 @@ def login():
         response = requests.post(url, data=data, headers=headers)
         if response.status_code == 200:
             token_data = response.json()
-            access_token = token_data.get("access_token")
+            os.environ["ACCESS_TOKEN"] = token_data.get("access_token")
         else:
             print(f"Failed to log in: {response.status_code}, {response.text}")

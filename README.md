@@ -13,3 +13,8 @@ You can use it for:
 
 ## Requirements
 python 3.11 or higher
+
+## Commands
+```efa-cli login```
+
+```efa-cli metrics add <metric-name>```
