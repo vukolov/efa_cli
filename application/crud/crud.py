@@ -51,14 +51,14 @@ class Crud:
             progress.add_task(description=f"Getting the list of {entity_type}...", total=None)
             response = session.get(url, headers=headers, params=params)
             if response.status_code == 200:
-                metrics = response.json()
-                if type(metrics) is not list:
-                    metrics = [metrics]
-                if len(metrics) == 0:
+                records = response.json()
+                if type(records) is not list:
+                    records = [records]
+                if len(records) == 0:
                     print(f"No {entity_type} found")
                     return
-                headers = metrics[0].keys()
-                rows = [[m[h] for h in headers] for m in metrics]
-                print(tabulate(rows, headers=headers, tablefmt="pretty"))
+                headers = records[0].keys()
+                table_rows = [[record[h] for h in headers] for record in records]
+                print(tabulate(table_rows, headers=headers, tablefmt="pretty"))
             else:
                 print(f"Failed to get the {entity_type} list: {response.status_code}, {response.text}")

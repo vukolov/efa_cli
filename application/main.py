@@ -3,8 +3,8 @@ import os
 import dotenv
 import requests
 from .auth.auth import TokenAuth, AutoRefreshAdapter
-from .metrics import app as metrics_app
-from .groups import app as metric_groups_app
+from application.crud.metrics import app as metrics_app
+from application.crud.groups import app as metric_groups_app
 from .version import app as version_app
 from .login import app as login_app
 
