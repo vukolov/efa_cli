@@ -4,6 +4,7 @@ import dotenv
 import requests
 from .auth.auth import TokenAuth, AutoRefreshAdapter
 from .metrics import app as metrics_app
+from .groups import app as metric_groups_app
 from .version import app as version_app
 from .login import app as login_app
 
@@ -27,6 +28,7 @@ app.context_settings = session_context
 app.add_typer(version_app, name="version", context_settings=session_context)
 app.add_typer(login_app, name="login", context_settings=session_context)
 app.add_typer(metrics_app, name="metrics", context_settings=session_context)
+app.add_typer(metric_groups_app, name="groups", context_settings=session_context)
 
 
 if __name__ == "__main__":

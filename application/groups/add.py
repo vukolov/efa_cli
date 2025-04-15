@@ -6,4 +6,4 @@ app = typer.Typer()
 
 @app.command()
 def add(ctx: typer.Context, name: str):
-    Crud.add(ctx=ctx, uri="/v1/metrics/", data={"name": name}, entity_type="metric", entity_name=name)
+    Crud.add(ctx=ctx, uri="/v1/metric-groups/", data={"name": name}, entity_type="metric group", entity_name=name)

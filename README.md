@@ -18,3 +18,5 @@ python 3.11 or higher
 ```efa-cli login```
 
 ```efa-cli metrics add <metric-name>```
+
+```efa-cli metrics lst --name <metric-name>```
